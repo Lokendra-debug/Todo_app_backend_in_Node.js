@@ -1,16 +1,25 @@
 const mongoose=require("mongoose")
 
-const userSchema=mongoose.Schema({
-    Email:{type:String,required:true,unique:true},
-    Name:{type:String,required:true},
-    Password:{type:String,required:true},
-    Age:{type:Number,required:true},
-    Location:{type:String,required:true},
-    Contact:{type:Number,requried:true}
-},{
-    versionKey:false
-})
+const userSchema = new mongoose.Schema({
+    name: {
+      type: String,
+      required: true
+    },
+    email: {
+      type: String,
+      required: true,
+      unique: true
+    },
+    password: {
+      type: String,
+      required: true
+    },
+    todos: [{
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'Todo'
+    }]
+  });
 
-const UserModel=mongoose.model("user",userSchema)
+const UserModel=mongoose.model("User",userSchema)
 
 module.exports={UserModel}
