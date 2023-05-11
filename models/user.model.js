@@ -14,10 +14,11 @@ const userSchema = new mongoose.Schema({
       type: String,
       required: true
     },
-    todos: [{
-      type: mongoose.Schema.Types.ObjectId,
-      ref: 'Todo'
-    }]
+    gender:{
+      type:String,
+      enum:["male","female"],
+      required:true
+    }
   });
 
 const UserModel=mongoose.model("User",userSchema)

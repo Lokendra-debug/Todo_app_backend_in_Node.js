@@ -21,7 +21,8 @@ const todoSchema = new mongoose.Schema({
     completed: {
       type: Boolean,
       default: false
-    }
+    },
+    userID:{type:String}
   });
 
   const TodoModel=mongoose.model("Todo",todoSchema)

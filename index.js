@@ -3,12 +3,17 @@ const cors=require("cors")
 require("dotenv").config()
 
 
-const {connection}=require("./database/db")
+const {connection}=require("./config/db")
+const {userRoute}=require("./routes/user.route")
+const {todoRoute}=require("./routes/todo.route")
 
 
 const app=express()
 app.use(express.json())
 app.use(cors())
+
+app.use("/user",userRoute)
+
 
 
 app.listen(process.env.port,async()=>{
