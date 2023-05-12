@@ -13,8 +13,11 @@ app.use(express.json())
 app.use(cors())
 
 app.use("/user",userRoute)
+app.use("/todo",todoRoute)
 
-
+app.all("*",(req,res)=>{
+    return res.status(404).send("404 Route Not Found")
+})
 
 app.listen(process.env.port,async()=>{
     try {

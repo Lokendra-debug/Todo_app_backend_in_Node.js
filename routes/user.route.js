@@ -4,6 +4,7 @@ const {register,login,logout}=require("../controllers/user.controller")
 
 
 userRoute.post("/register",register)
+userRoute.post("/login",login)
 
 
 
