@@ -13,7 +13,7 @@ const register=async (req,res)=>{
             return res.status(400).send({"msg":"already exist please login"})
         }
         const hash = bcrypt.hashSync(password, 6);
-        let newuser=new UserModel({name,email,password:hash,gender})
+        let newuser=new UserModel({name,email,password:hash,gender,role:"User"})
         await newuser.save()
         res.status(200).send({"msg":"User registered successfully"})
 

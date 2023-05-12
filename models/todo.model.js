@@ -23,7 +23,10 @@ const todoSchema = new mongoose.Schema({
       default: false
     },
     userID:{type:String}
-  });
+  }, {
+    versionKey : false,
+    timestamps :true
+});
 
   const TodoModel=mongoose.model("Todo",todoSchema)
 
