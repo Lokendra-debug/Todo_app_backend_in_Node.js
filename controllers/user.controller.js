@@ -39,7 +39,7 @@ const login=async (req,res)=>{
             bcrypt.compare(password, user.password, (err, result)=> {
                 
                 if(result){
-                    res.status(200).send({"success":true,"token":jwt.sign({userID:user._id}, process.env.jwtKey, { expiresIn: '1h' })})
+                    res.status(200).send({"success":true,"token":jwt.sign({userID:user._id}, process.env.AccessToken, { expiresIn: '1h' })})
                 }else{
                     return res.status(400).send({"error":"Invalid Password"})
                 }
@@ -58,5 +58,21 @@ const logout=async(req,res)=>{
 
 }
 
+const userGet=async(req,res)=>{
 
-module.exports={register,login,logout}
+}
+
+const userUpdate=async(req,res)=>{
+
+}
+
+const userDelete=async(req,res)=>{
+
+}
+
+const 
+
+
+
+
+module.exports={register,login,logout,userGet,userUpdate,userDelete}

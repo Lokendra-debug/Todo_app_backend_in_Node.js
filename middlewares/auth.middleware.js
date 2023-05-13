@@ -14,7 +14,7 @@ const auth= async (req,res,next)=>{
     if(token){
 
         try {
-            var decoded = jwt.verify(token, process.env.jwtKey);
+            var decoded = jwt.verify(token, process.env.AccessToken);
 
             if(decoded){
                 req.body.userID=decoded.userID;

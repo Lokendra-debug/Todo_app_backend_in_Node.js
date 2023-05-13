@@ -1,6 +1,6 @@
 const {Router}=require("express")
 const userRoute=Router()
-const {register,login,logout}=require("../controllers/user.controller")
+const {register,login,logout,userGet,userUpdate,userDelete}=require("../controllers/user.controller")
 
 
 userRoute.post("/register",register)
