@@ -55,7 +55,7 @@ const login=async (req,res)=>{
 }
 
 const logout=async(req,res)=>{
-
+    const data=req.body;
 }
 
 const userGet=async(req,res)=>{
