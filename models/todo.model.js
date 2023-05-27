@@ -22,7 +22,7 @@ const todoSchema = new mongoose.Schema({
       type: Boolean,
       default: false
     },
-    userID:{type:String}
+    userID:{type:String, required:true}
   }, {
     versionKey : false,
     timestamps :true
